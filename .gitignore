@@ -1,0 +1,10 @@
+# packages
+temp
+flatpak_packages
+
+# build artifacts
+build
+.flatpak-builder
+
+# local flatpak repo
+Flat-Remix-GTK
