@@ -1,0 +1,42 @@
+{
+  "id": "org.gtk.Gtk3theme.µtheme_name",
+  "branch": "3.22",
+  "runtime": "org.freedesktop.Platform",
+  "build-extension": true,
+  "sdk": "org.freedesktop.Sdk",
+  "runtime-version": "19.08",
+  "appstream-compose": false,
+  "separate-locales": false,
+  "modules": [
+    {
+      "name": "µtheme_name",
+      "buildsystem": "simple",
+      "build-commands": [
+        "install -dm755 /usr/share/runtime/share/themes/µtheme_name/gtk-3.0",
+        "cp -a µtheme_name/index.theme /usr/share/runtime/share/themes/µtheme_name/",
+        "cp -a µtheme_name/gtk-3.0/** /usr/share/runtime/share/themes/µtheme_name/gtk-3.0"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/sp1ritCS/flat-remix-gtk.git"
+        }
+      ]
+    },
+    {
+      "name": "appdata",
+      "buildsystem": "simple",
+      "build-commands": [
+        "mkdir -p ${FLATPAK_DEST}/share/appdata",
+        "cp org.gtk.Gtk3theme.µtheme_name.appdata.xml ${FLATPAK_DEST}/share/appdata",
+        "appstream-compose --basename=org.gtk.Gtk3theme.µtheme_name --prefix=${FLATPAK_DEST} --origin=flatpak org.gtk.Gtk3theme.µtheme_name"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "org.gtk.Gtk3theme.µtheme_name.appdata.xml"
+        }
+      ]
+  }
+  ]
+}
