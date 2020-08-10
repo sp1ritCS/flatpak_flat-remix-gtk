@@ -1,6 +1,7 @@
 # packages
 temp
 flatpak_packages
+flathub
 
 # build artifacts
 build

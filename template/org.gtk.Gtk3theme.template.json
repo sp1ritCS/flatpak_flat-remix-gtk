@@ -20,6 +20,7 @@
         {
           "type": "git",
           "url": "https://github.com/sp1ritCS/flat-remix-gtk.git"
+	  "tag": "20200718"
         }
       ]
     },
