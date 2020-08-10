@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="runtime">
   <id>org.gtk.Gtk3theme.µtheme_name</id>
-  <metadata_license>BSD-3-Clause</metadata_license>
+  <metadata_license>FSFAP</metadata_license>
   <project_license>GPL-3.0</project_license>
   <name>µtheme_name</name>
   <summary>A GTK application theme inspired by material design</summary>
