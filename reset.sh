@@ -11,16 +11,11 @@ for p in ./flatpak_packages/*; do
 		fname=$(echo $p | sed 's/\.\/flatpak_packages\///')
 		name=$(cat "$p/org.gtk.Gtk3theme.$fname.json" |  jq ".id" | tr -d \" )
 		echo $name			
-		cd ./flathub	
-		git checkout new-pr
+		cd ./flathub
+		git checkout new-pr	
     		git checkout "$name"
-		cp "../flatpak_packages/$fname/$name.json" .
-		cp "../flatpak_packages/$fname/$name.appdata.xml" .
-		cp "../flatpak_packages/$fname/flathub.json" .
-		#git add "$name.json" "$name.appdata.xml"
-		git add .
-		git commit -m "Cleaned commits from $name"
-		git push --force origin $name
+		ncm=$(expr $(git log | wc -l) / 6)
+		git reset --soft HEAD~$ncm
 		cd $root
 	fi
 done
